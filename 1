@@ -1,0 +1,23 @@
+#include <stdio.h>
+#include <string.h>
+
+int main() {
+    char alphabet[] = "abcdefghijklmnopqrstuvwxyz"; // Алфавитный массив
+    char letter = 's'; // Буква, которую нам нужно найти
+    int index = -1;
+
+    for (int i = 0; i < strlen(alphabet); i++) {
+        if (alphabet[i] == letter) {
+            index = i + 1; // i+1, для того, чтобы не перепутать начало с 0 
+            break; // Выход из цикла после успешного завершения
+        }
+    }
+
+    if (index != -1) {
+        printf("Letter '%c' found on %d pos of alphabet\n", letter, index); // Вывод буквы и ее индекса
+    } else {
+        printf("Letter '%c' not found in alphabet\n", letter); // Ошибка печати и пропущенная буква
+    }
+
+    return 0;
+}
